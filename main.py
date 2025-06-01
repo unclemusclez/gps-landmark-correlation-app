@@ -5,7 +5,7 @@ from ratelimit import limits, sleep_and_retry
 @sleep_and_retry
 @limits(calls=10, period=60)
 def generate_text(prompt, api_key):
-    url = os.environ.get('API_ENDPOINT', "https://api.meta.com/compat/v1/chat/completions")
+    url = os.environ.get('API_ENDPOINT', "https://api.llama.com/compat/v1/chat/completions")
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
